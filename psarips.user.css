@@ -1,9 +1,13 @@
 /* ==UserStyle==
 @name           PSARips - Ash Dark
+@namespace      github.com/ush-ruff
+@homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
+@updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
 @version        1.0.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   less
+@license        GNU GPLv3
 ==/UserStyle== */
 @-moz-document url-prefix("https://psarips."), url-prefix("https://psa.one"), url-prefix("https://x265.club") {
   @import (css) url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
