@@ -1,6 +1,5 @@
 /* ==UserStyle==
 @name           PSARips - Ash Dark
-@namespace      github.com/openstyles/stylus
 @version        1.0.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
@@ -11,12 +10,15 @@
   :root {
     --bg-100: #000;
     --bg-200: #111;
-    --bg-300: #131313;
-    --bg-400: #1e1e1e;
-    --bg-500: #232323;
-    --bg-600: #2a2a2a;
-    --bg-700: #333;
-    --bg-800: #555;
+    --bg-220: #131313;
+    --bg-250: #191919;
+    --bg-290: #1e1e1e;
+    --bg-300: #232323;
+    --bg-350: #2a2a2a;
+    --bg-400: #333;
+    --bg-450: #383838;
+    --bg-500: #444;
+    --bg-600: #555;
 
     --cl-100: #fff;
     --cl-200: #eee;
@@ -28,12 +30,13 @@
 
     --red: #fc311c;
     --green: #03d98a;
+    --link-color: #4fc2ff;
   }
   * {
-    scrollbar-color: #404449 var(--bg-500);
+    scrollbar-color: #404449 var(--bg-300);
   }
   html, body {
-    background-color: var(--bg-300);
+    background-color: var(--bg-220);
     color: var(--cl-600);
   }
   body.wp-admin {
@@ -50,12 +53,11 @@
   }
   a:hover {
     text-decoration: none !important;
-    color: #4fc2ff;
+    color: var(--link-color);
   }
   .sp-body a:hover, .dropshadowboxes-container a:hover, .widget a:hover {
     -webkit-text-stroke: initial;
   }
-
   .container-inner .main-inner {
     display: flex;
     width: 100%;
@@ -69,7 +71,7 @@
       height: 100%;
       top: 0;
       right: 0;
-      background: var(--bg-400);
+      background: var(--bg-290);
     }
     .content {
       width: 75%;
@@ -84,11 +86,11 @@
 
   /* Content */
   .main-inner {
-    background-color: var(--bg-500);
+    background-color: var(--bg-300);
   }
   .page-title {
-    background-color: var(--bg-500);
-    border-color: var(--bg-700);
+    background-color: var(--bg-300);
+    border-color: var(--bg-400);
   }
   .page-title, .post-title, .post-title a, .page-title a {
     color: var(--cl-300) !important;
@@ -96,9 +98,9 @@
   }
   .post-comments, .post-comments:hover {
     bottom: -40px !important;
-    color: var(--cl-500) !important;
     -webkit-text-stroke: initial;
-    font-size: 0.925rem !important
+    font-size: 0.925rem !important;
+    color: var(--cl-500) !important;
   }
   .featured .post-inner .post-meta .caption {
     color: var(--red) !important;
@@ -110,13 +112,13 @@
     color: var(--cl-600);
   }
   .featured, .featured.flexslider, .post-list .post-row {
-    border-bottom-color: var(--bg-700);
+    border-bottom-color: var(--bg-400);
   }
   .wp-pagenavi a {
     color: var(--cl-600);
-    border-color: var(--bg-800);
+    border-color: var(--bg-600);
   }
-  .wp-pagenavi a:active, .wp-pagenavi a:hover, .wp-pagenavi span.current {
+  .wp-pagenavi :is(a:active, a:hover), .wp-pagenavi span.current {
     color: var(--cl-400);
     border-top: 1px solid var(--cl-900);
   }
@@ -124,20 +126,21 @@
   /* Sidebar */
   .sidebar {
     padding-bottom: 0;
-  }
-  .sidebar .sidebar-content, .sidebar .sidebar-toggle {
-    background-color: var(--bg-400);
+
+    .sidebar-content, .sidebar-toggle {
+      background-color: var(--bg-290);
+    }
   }
   .widget-title {
     padding-block: 5px;
   }
   .alx-posts {
     li {
-      border-bottom: none;
       -webkit-text-stroke: initial;
+      border-bottom: none;
     }
     li + li {
-      border-top: 1px solid var(--bg-700);
+      border-top: 1px solid var(--bg-400);
     }
     .post-item-title a {
       color: var(--cl-400) !important;
@@ -146,7 +149,7 @@
       color: #3b8dbd !important;
 
       &:hover {
-        color: #4fc2ff !important;
+        color: var(--link-color) !important;
       }
     }
     .caption {
@@ -154,10 +157,13 @@
       color: var(--green) !important;
     }
   }
+  .widget_nav_menu ul li a {
+    border-bottom-color: var(--bg-600);
+  }
 
   /* Footer */
   #footer {
-    background-color: var(--bg-500);
+    background-color: var(--bg-300);
   }
   #footer, #footer a {
     color: var(--cl-600) !important;
@@ -166,17 +172,17 @@
     color: var(--cl-300) !important;
   }
   [class*="footer-widget-"] li {
-    border-color: var(--bg-700) !important;
+    border-color: var(--bg-400) !important;
   }
   #footer-bottom {
-    background-color: var(--bg-400);
+    background-color: var(--bg-290);
   }
 
   /* Notice */
   .dropshadowboxes-rounded-corners {
-    background: var(--bg-600) !important;
-    color: var(--cl-600);
     -webkit-text-stroke: initial;
+    background: var(--bg-350) !important;
+    color: var(--cl-600);
 
     &[style*="border: 2px solid red"] {
       border-color: var(--red) !important;
@@ -186,15 +192,15 @@
       color: #3b8dbd !important;
       
       &:hover {
-        color: #4fc2ff !important;
         -webkit-text-stroke: initial;
+        color: var(--link-color) !important;
       }
     }
   }
 
   /* Content Pages */
   .hr, hr {
-    background: var(--bg-800);
+    background: var(--bg-600);
     border-bottom: none;
   }
   .content .post-nav {
@@ -205,6 +211,13 @@
   }
   .content .post-nav li.previous {
     box-shadow: 1px 0 0 var(--bg-100), inset -1px 0 0 var(--bg-100);
+  #wpd-post-rating .wpd-rating-wrap .wpd-rating-value {
+    background-color: var(--bg-220);
+    border-color: var(--cl-600);
+    
+    span {
+      color: var(--cl-400);
+    }
   }
   .post-nav li a span {
     color: var(--cl-600);
@@ -217,53 +230,48 @@
       background-color: #557ade;
     }
   }
-  #wpd-post-rating .wpd-rating-wrap .wpd-rating-value {
-    background-color: var(--bg-300);
-    border-color: var(--cl-600);
-  }
-  #wpd-post-rating .wpd-rating-wrap .wpd-rating-value span {
-    color: var(--cl-400);
-  }
 
   /* Posts */
-  .sp-wrap-steelblue {
-    background-color: #273c75;
-    border-color: #273c75;
-    border-radius: 2px;
-  }
   .sp-wrap-blue {
     background-color: #325289;
     border-color: #325289;
     border-radius: 2px;
   }
-  .sp-wrap-steelblue .sp-head {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 617.12 617.16' %3E%3Cg transform='translate(-71.438 -68.062)' %3E%3Cpath id='rect1337' style='fill-rule:evenodd;stroke-width:0;fill:%23ddd' d='m275.72 68.062v204.32h-204.28l-0.002 208.56h204.28v204.28h208.56v-204.28h204.28v-208.56h-204.28v-204.32l-208.56 0.002z' /%3E%3C/g %3E%3C/svg%0A%3E");
-    background-size: 14px;
-    color: var(--cl-300);
-  }
-  .sp-wrap-steelblue .sp-head.unfolded {
-    background-image: none;
-    position: relative;
-  }
-  .sp-wrap-steelblue .sp-head.unfolded::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: 5px;
-    width: 14px;
-    transform: translate(0, -50%);
-    border-radius: 1px;
-    background: var(--cl-300);
-  }
-  .sp-wrap-steelblue .sp-body {
-    background-color: #487eb0;
-    border-color: #487eb0;
-    color: var(--cl-400);
-    -webkit-text-stroke: initial;
-  }
-  .sp-wrap-steelblue .spdiv {
-    color: var(--cl-600);
+  .sp-wrap-steelblue {
+    background-color: #273c75;
+    border-color: #273c75;
+    border-radius: 2px;
+
+    .sp-head {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 617.12 617.16' %3E%3Cg transform='translate(-71.438 -68.062)' %3E%3Cpath id='rect1337' style='fill-rule:evenodd;stroke-width:0;fill:%23ddd' d='m275.72 68.062v204.32h-204.28l-0.002 208.56h204.28v204.28h208.56v-204.28h204.28v-208.56h-204.28v-204.32l-208.56 0.002z' /%3E%3C/g %3E%3C/svg%0A%3E");
+      background-size: 14px;
+      color: var(--cl-300);
+    }
+    .sp-head.unfolded {
+      background-image: none;
+      position: relative;
+      
+      &::before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        width: 14px;
+        top: 50%;
+        left: 0;
+        background: var(--cl-300);
+        border-radius: 1px;
+        transform: translate(0, -50%);
+      }
+    }
+    .sp-body {
+      -webkit-text-stroke: initial;
+      background-color: #487eb0;
+      border-color: #487eb0;
+      color: var(--cl-400);
+    }
+    .spdiv {
+      color: var(--cl-600);
+    }
   }
   img[alt="Torrent"] {
     margin-bottom: -5px;
@@ -271,9 +279,9 @@
   img[alt="Torrent"] + strong a {
     color: #273c75 !important;
 
-    &:is(:hover, : focus) {
-      color: var(--cl-200) !important;
+    &:is(:hover, :focus) {
       text-decoration: none !important;
+      color: var(--cl-200) !important;
     }
   }
   p strong span[style="color: #008000;"] {
@@ -287,14 +295,11 @@
     a {
       color: var(--cl-500) !important;
 
-      &:is(:hover, : focus) {
-        color: var(--cl-300) !important;
+      &:is(:hover, :focus) {
         text-decoration: none !important;
+        color: var(--cl-300) !important;
       }
     }
-  }
-  .post-nav li a:hover span {
-    color: #3b8dbd;
   }
   .related-posts {
     border-color: var(--cl-900);
@@ -306,14 +311,14 @@
   }
   #wpdcom {
     .wpd-form-head {
-      border-bottom-color: var(--bg-800);
+      border-bottom-color: var(--bg-600);
     }
     .wpd-auth .wpd-login a:hover {
       text-decoration: none;
-      color: #4fc2ff;
+      color: var(--link-color);
     }
     .wpd-thread-head {
-      border-bottom-color: var(--bg-700);
+      border-bottom-color: var(--bg-400);
     }
     .wpd-thread-filter .wpd-filter {
       border-bottom-color: var(--cl-900);
@@ -326,7 +331,7 @@
       border-color: var(--bg-100);
     }
     .wpdiscuz-sort-buttons:hover {
-      background-color: var(--bg-700);
+      background-color: var(--bg-400);
     }
     .wpdiscuz-sort-buttons .wpdiscuz-sort-button:hover {
       background-color: transparent;
@@ -342,8 +347,8 @@
       color: var(--cl-500);
     }
     &.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap {
-      background-color: #191919;
-      border-left-color: var(--bg-800);
+      background-color: var(--bg-250);
+      border-left-color: var(--bg-600);
       
       p {
         color: var(--cl-600);
@@ -351,9 +356,9 @@
     }
     .ql-container {
       height: 5.5rem;
-      background-color: var(--bg-700);
-      border-color: var(--bg-800);
-      border-bottom-color: var(--bg-800) !important;
+      background-color: var(--bg-400);
+      border-color: var(--bg-600);
+      border-bottom-color: var(--bg-600) !important;
       transition: border-bottom 75ms ease-out;
       
       &:focus-within {
@@ -384,8 +389,8 @@
   .themeform input[type="password"], .themeform input[type="email"],
   .themeform input[type="url"], .themeform input[type="tel"],
   .themeform input[type="number"], .themeform select, .themeform textarea {
-    background-color: #383838;
-    border-color: #444;
+    background-color: var(--bg-450);
+    border-color: var(--bg-500);
     color: var(--cl-600);
   }
   .search-form input[type="search"]:focus, .themeform input[type="text"]:focus,
@@ -405,7 +410,7 @@
 
   @media only screen and (min-width: 720px) {
     #nav-header.nav-container, #main-header-search .search-expand {
-      background-color: var(--bg-400);
+      background-color: var(--bg-290);
     }
     .search-expand, #nav-topbar.nav-container,
     .is-scrolled #header .nav-container.desktop-sticky, .is-scrolled #header .search-expand {
@@ -421,28 +426,30 @@
       border-bottom-color: var(--bg-100);
     }
     .s1.expanding, .s1.collapsing, .s1.expanded {
-      background: var(--bg-400);
+      background: var(--bg-290);
     }
   }
   
   /* Captcha Wait Page */
-  #cf-wrapper #cf-error-details {
-    background-color: var(--bg-300);
-  }
   #cf-wrapper :is(h1, h2, h3, h4, h5, h6, p) {
     color: var(--cl-500);
   }
-  #cf-wrapper #cf-error-details .cf-highlight {
-    background-color: var(--bg-500);
-    background-image: linear-gradient(180deg, var(--bg-400), var(--bg-500) 3%, var(--bg-500) 97%, var(--bg-400));
-  }
-  #cf-wrapper #cf-error-details .cf-highlight .cf-highlight-inverse {
-    background-color: var(--bg-300);
-  }
-  #cf-wrapper #cf-error-details .cf-screenshot-container {
-    background: url(/cdn-cgi/images/browser-bar.png?1376755637) no-repeat var(--bg-700);
-  }
-  #cf-wrapper #cf-error-details .cf-error-footer {
-    border-top-color: var(--bg-800);
+  #cf-wrapper #cf-error-details {
+    background-color: var(--bg-220);
+    
+    .cf-highlight {
+      background-color: var(--bg-300);
+      background-image: linear-gradient(180deg, var(--bg-290), var(--bg-300) 3%, var(--bg-300) 97%, var(--bg-290));
+      
+      .cf-highlight-inverse {
+        background-color: var(--bg-220);
+      }
+    }
+    .cf-screenshot-container {
+      background: url(/cdn-cgi/images/browser-bar.png?1376755637) no-repeat var(--bg-400);
+    }
+    .cf-error-footer {
+      border-top-color: var(--bg-600);
+    }
   }
 }
