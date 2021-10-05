@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.0.1
+@version        1.1.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   less
@@ -32,9 +32,26 @@
     --cl-600: #aaa;
     --cl-900: #999;
 
+    --link: #45a2d9;
+    --link-hover: #4fc2ff;
+    
+    --admin: #ff3434;
+    --vip: #E85CE8;
+    --subscriber: #00B38F;
+
     --red: #fc311c;
     --green: #03d98a;
-    --link-color: #4fc2ff;
+    --yellow: #dab804;
+
+    --post-steelblue: #273c75;
+    --post-blue: #325289;
+    --post-body: #487eb0;
+    --post-body-green: #03d98a;
+    --post-body-green-bright: #74ff74;
+    --post-body-pink: #fd78bc;
+    --post-body-red: #f9667b;
+    --post-body-violet: #89a6ff;
+    --post-body-orange: #f78750;
   }
   * {
     scrollbar-color: #404449 var(--bg-300);
@@ -55,12 +72,19 @@
   h1, h2, h3, h4, h5, h6 {
     color: var(--cl-300);
   }
+  a {
+    color: var(--link);
+  }
   a:hover {
     text-decoration: none !important;
-    color: var(--link-color);
+    color: var(--link-hover);
   }
-  .sp-body a:hover, .dropshadowboxes-container a:hover, .widget a:hover {
-    -webkit-text-stroke: initial;
+  .sp-body a, .dropshadowboxes-container a, .widget a {
+    color: var(--link-hover) !important;
+
+    &:hover {
+      -webkit-text-stroke: initial;
+    }
   }
   .container-inner .main-inner {
     display: flex;
@@ -88,7 +112,7 @@
     }
   }
 
-  /* Content */
+  /* Main */
   .main-inner {
     background-color: var(--bg-300);
   }
@@ -150,10 +174,10 @@
       color: var(--cl-400) !important;
     }
     .post-item-category a {
-      color: #3b8dbd !important;
+      color: var(--link) !important;
 
       &:hover {
-        color: var(--link-color) !important;
+        color: var(--link-hover) !important;
       }
     }
     .caption {
@@ -193,16 +217,19 @@
     }
     
     a {
-      color: #3b8dbd !important;
+      color: var(--link) !important;
       
       &:hover {
         -webkit-text-stroke: initial;
-        color: var(--link-color) !important;
+        color: var(--link-hover) !important;
       }
     }
   }
 
   /* Content Pages */
+  .page-title :is(h1, h2, h4) {
+    color: var(--yellow);
+  }
   .hr, hr {
     background: var(--bg-600);
     border-bottom: none;
@@ -226,16 +253,33 @@
       background-color: #557ade;
     }
   }
+  :is(.content, #footer) span:is([style^="color: #ff0000"], [style^="color:#FF0000"]) {
+    color: var(--red) !important;
+  }
+  .entry font[color="red"] {
+    color: var(--red) !important;
+  }
+  :is(.content, #footer) span:is([style^="color: #ff00ff"], [style^="color:#FF00FF"]) {
+    color: var(--vip) !important;
+  }
+  .themeform label {
+    color: var(--cl-400);
+  }
+  .filetype-7z, .filetype-gz, .filetype-rar, .filetype-sit, .filetype-tar, .filetype-zip {
+    padding-left: 24px;
+    background-image: url(https://icon-library.com/images/rar-icon/rar-icon-22.jpg);
+    background-size: 20px;
+  }
 
   /* Posts */
   .sp-wrap-blue {
-    background-color: #325289;
-    border-color: #325289;
+    background-color: var(--post-blue);
+    border-color: var(--post-blue);
     border-radius: 2px;
   }
   .sp-wrap-steelblue {
-    background-color: #273c75;
-    border-color: #273c75;
+    background-color: var(--post-steelblue);
+    border-color: var(--post-steelblue);
     border-radius: 2px;
 
     .sp-head {
@@ -261,8 +305,8 @@
     }
     .sp-body {
       -webkit-text-stroke: initial;
-      background-color: #487eb0;
-      border-color: #487eb0;
+      background-color: var(--post-body);
+      border-color: var(--post-body);
       color: var(--cl-400);
     }
     .spdiv {
@@ -273,18 +317,32 @@
     margin-bottom: -5px;
   }
   img[alt="Torrent"] + strong a {
-    color: #273c75 !important;
+    color: var(--post-steelblue) !important;
 
     &:is(:hover, :focus) {
       text-decoration: none !important;
       color: var(--cl-200) !important;
     }
   }
-  p strong span[style="color: #008000;"] {
-    color: #03d98a !important;
-  }
-  p span[style="color: #993366;"] {
-    color: #fd78bc !important;
+  #content .sp-body p span {
+    &[style="color: #008000;"] {
+      color: var(--post-body-green) !important;
+    }
+    &[style="color: #00ff00;"] {
+      color: var(--post-body-green-bright) !important;
+    }
+    &[style="color: #993366;"] {
+      color: var(--post-body-pink) !important;
+    }
+    &[style="color: #ff0000;"] {
+      color: var(--post-body-red) !important;
+    }
+    &[style="color: #3366ff;"] {
+      color: var(--post-body-violet) !important;
+    }
+    &[style="color: #ff6600;"] {
+      color: var(--post-body-orange) !important;
+    }
   }
   .sp-body .dropshadowboxes-rounded-corners {
     border: 1px solid #33333d !important;
@@ -298,11 +356,14 @@
     }
   }
   .related-posts {
-    border-color: var(--cl-900);
+    margin-bottom: 0;
+    padding-top: 25px;
+    border-block: 1px solid var(--bg-600);
   }
 
   /* Comments */
   #comments {
+    margin-top: 0;
     color: var(--cl-400);
   }
   #wpdcom {
@@ -311,7 +372,7 @@
     }
     .wpd-auth .wpd-login a:hover {
       text-decoration: none;
-      color: var(--link-color);
+      color: var(--link-hover);
     }
     .wpd-thread-head {
       border-bottom-color: var(--bg-400);
@@ -333,11 +394,49 @@
       background-color: transparent;
       color: var(--cl-200);
     }
-    &.wpd-layout-2 .wpd-comment .wpd-avatar :is(img, img.avatar) {
+    &.wpd-layout-2 .wpd-form .wpd-avatar :is(img, img.avatar) {
       background-color: transparent;
+    }
+    &.wpd-layout-2 .wpd-comment {
+      .wpd-avatar :is(img, img.avatar) {
+        background-color: transparent;
+      }
+      .wpd-blog-premium .wpd-avatar img {
+        border-bottom-color: var(--vip);
+      }
+      .wpd-blog-administrator .wpd-avatar img {
+        border-bottom-color: var(--admin);
+      }
+      .wpd-blog-subscriber .wpd-avatar img {
+        border-bottom-color: var(--subscriber);
+      }
     }
     .wpd-blog-guest :is(.wpd-comment-author, .wpd-comment-author a) {
       color: var(--cl-100);
+    }
+    .wpd-blog-premium {
+      .wpd-comment-author, .wpd-comment-author a {
+        color: var(--vip);
+      }
+      .wpd-comment-label {
+        background-color: var(--vip);
+      }
+    }
+    .wpd-blog-administrator {
+      .wpd-comment-author, .wpd-comment-author a {
+        color: var(--admin);
+      }
+      .wpd-comment-label {
+        background-color: var(--admin);
+      }
+    }
+    .wpd-blog-subscriber {
+      .wpd-comment-author, .wpd-comment-author a {
+        color: var(--subscriber);
+      }
+      .wpd-comment-label {
+        background-color: var(--subscriber);
+      }
     }
     .wpd-comment-text, .wpd-comment-text p {
       color: var(--cl-500);
@@ -348,6 +447,15 @@
       
       p {
         color: var(--cl-600);
+      }
+      &.wpd-blog-premium {
+        border-color: var(--vip);
+      }
+      &.wpd-blog-administrator {
+        border-color: var(--admin);
+      }
+      &.wpd-blog-subscriber {
+        border-color: var(--subscriber);
       }
     }
     .ql-container {
@@ -381,23 +489,23 @@
   }
 
   /* Inputs */
-  .search-form input[type="search"], .themeform input[type="text"],
-  .themeform input[type="password"], .themeform input[type="email"],
-  .themeform input[type="url"], .themeform input[type="tel"],
-  .themeform input[type="number"], .themeform select, .themeform textarea {
+  .search-form input[type="search"], .themeform :is(select, textarea), 
+  .themeform input:is([type="text"], [type="password"], [type="email"], [type="url"], [type="tel"], [type="number"]) {
     background-color: var(--bg-450);
     border-color: var(--bg-500);
     color: var(--cl-600);
-  }
-  .search-form input[type="search"]:focus, .themeform input[type="text"]:focus,
-  .themeform input[type="password"]:focus, .themeform input[type="email"]:focus,
-  .themeform input[type="url"]:focus, .themeform input[type="tel"]:focus,
-  .themeform input[type="number"]:focus, .themeform select:focus, .themeform textarea:focus {
-    border-color: #3b8dbd;
-    color: var(--cl-400);
+
+    &:focus {
+      border-color: var(--link-hover);
+      color: var(--cl-400);
+    }
+    &:focus-visible {
+      outline: none;
+    }
   }
   .notebox {
     background-color: var(--bg-200);
+    color: var(--cl-300);
   }
   .notebox::before,
   .notebox::after {
