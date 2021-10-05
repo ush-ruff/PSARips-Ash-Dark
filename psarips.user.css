@@ -3,12 +3,16 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.2.0
+@version        1.3.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
+@preprocessor   stylus
 @license        GNU GPLv3
+@var            select bgImage "Background Image" ["None", "Spooky", "customBg:Custom Background"]
+@var            text customBgImage "Custom Background Image" "Enter url within quotes"
 ==/UserStyle== */
 @-moz-document url-prefix("https://psarips."), url-prefix("https://psa.one"), url-prefix("https://x265.club") {
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
   :root {
     --bg-100: #000;
     --bg-200: #111;
@@ -62,6 +66,18 @@
     height: auto;
     background-color: #2c3338;
   }
+  if bgImage == Spooky {
+    body:not(.wp-admin) {
+      background: url("/wp-content/uploads/2020/10/—Pngtree—halloween-pumpkin-border_5494976.png") repeat center top;
+      background-attachment: scroll;
+      background-size: 100%;
+    }
+  }
+  else if bgImage == customBg {
+    body:not(.wp-admin) {
+      background: fixed center / cover no-repeat;
+      background-image: url(customBgImage);
+    }
   }
   h1, h2, h3, h4, h5, h6 {
     color: var(--cl-300);
