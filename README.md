@@ -1,4 +1,6 @@
 # PSARips-Ash-Dark
+![Preview](images/sc-01.png)
+
 Dark mode for PSARips with some tiny layout changes. It completely restyles the website to dark and redesigns some elements to better fit in with the theme. 
 
 ## Install and setup
@@ -18,7 +20,27 @@ Once you have installed the browser extension click on the link below to install
   >This is only available using Stylus (see the [documentation](https://github.com/openstyles/stylus/wiki/Usercss)).
 
 ## Screenshots
-![Home](images/scr01.png)
+### Homepage
+![Homepage Featured](images/sc-02.png)
+![Homepage](images/sc-03.png)
+
+### Movies
+![Movies](images/sc-04.png)
+
+### TV Shows
+![TV Shows](images/sc-05.png)
+
+### Posts
+![Posts](images/sc-06.png)
+![Archived Posts](images/sc-07.png)
+![Archived Posts Open](images/sc-08.png)
+
+### Comments Section
+![Comments](images/sc-09.png)
+![Comments 2](images/sc-10.png)
+
+### Search Results
+![Search Results](images/sc-11.png)
 
 ## License
 [GNU GPLv3](LICENSE)
