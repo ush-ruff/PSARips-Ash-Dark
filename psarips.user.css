@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.3.0
+@version        1.4.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -24,6 +24,7 @@
     --bg-400: #333;
     --bg-450: #383838;
     --bg-500: #444;
+    --bg-550: #4e4e4e;
     --bg-600: #555;
 
     --cl-100: #fff;
@@ -48,6 +49,7 @@
     --post-steelblue: #273c75;
     --post-blue: #325289;
     --post-body: #487eb0;
+    --post-body-light: #588ab9;
     --post-body-green: #03d98a;
     --post-body-green-bright: #74ff74;
     --post-body-pink: #fd78bc;
@@ -304,6 +306,12 @@
   .entry font[color="red"] {
     color: var(--red) !important;
   }
+  .entry .wp-caption {
+    padding-top: 0;
+  }
+  .entry :is(.wp-caption, table tr.alt) {
+    background-color: var(--bg-350);
+  }
   :is(.content, #footer) span:is([style^="color: #ff00ff"], [style^="color:#FF00FF"]) {
     color: var(--vip) !important;
   }
@@ -356,6 +364,9 @@
     }
     .spdiv {
       color: var(--cl-600);
+    }
+    .sp-body .sp-body {
+      background-color: var(--post-body-light);
     }
   }
   img[alt="Torrent"] {
@@ -503,6 +514,14 @@
         border-color: var(--subscriber);
       }
     }
+    &.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment.wpd-reply > .wpd-comment-wrap {
+    p, .wpd-reply-to, .wpd-comment-date, .wpd-reply-button {
+      color: var(--bg-500);
+    }
+    .wpd-reply-button svg {
+      fill: var(--bg-500);
+    }
+  }
     .ql-container {
       height: 5.5rem;
       background-color: var(--bg-400);
@@ -546,6 +565,30 @@
     }
     &:focus-visible {
       outline: none;
+    }
+  }
+  div.wpforms-container-full .wpforms-form {
+    input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], 
+    input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"], input[type="text"], 
+    input[type="time"], input[type="url"], input[type="week"], select, textarea {
+      background-color: var(--bg-500);
+      border-color: var(--bg-550);
+      color: var(--cl-400);
+
+      &:focus {
+        border-color: var(--link-hover);
+        color: var(--cl-300);
+      }
+    }
+    input[type="submit"], button[type="submit"], .wpforms-page-button {
+      background-color: var(--link);
+      border-color: var(--bg-400);
+      color: var(--cl-100);
+      
+      &:hover, &:active, &:focus {
+        background-color: var(--link-hover);
+        border-color: var(--bg-600);
+      }
     }
   }
   .notebox {
