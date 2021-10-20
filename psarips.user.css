@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.6.0
+@version        1.6.1
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -241,7 +241,7 @@
     background-color: var(--bg-300);
   }
   #footer, #footer a {
-    color: var(--cl-600) !important;
+    color: var(--cl-400) !important;
   }
   #footer .widget a:hover {
     color: var(--cl-300) !important;
@@ -553,6 +553,7 @@
       line-height: 1.25;
       
       > * {
+        font-family: inherit;
         color: var(--cl-400);
       }
       &::before {
