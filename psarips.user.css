@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.6.1
+@version        1.7.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -529,13 +529,13 @@
       }
     }
     &.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment.wpd-reply > .wpd-comment-wrap {
-    p, .wpd-reply-to, .wpd-comment-date, .wpd-reply-button {
-      color: var(--bg-500);
+      p, .wpd-reply-to, .wpd-comment-date, .wpd-reply-button {
+        color: var(--bg-500);
+      }
+      .wpd-reply-button svg {
+        fill: var(--bg-500);
+      }
     }
-    .wpd-reply-button svg {
-      fill: var(--bg-500);
-    }
-  }
     .ql-container {
       height: 5.5rem;
       background-color: var(--bg-400);
@@ -564,6 +564,29 @@
     }
     .wpd-second-button, .wpd-prim-button {
       font-family: Lato, san-serif;
+    }
+    .wpd-tools-actions {
+      top: 27px;
+      left: -60px;
+      background-color: var(--bg-500);
+      border-color: var(--bg-500);
+      color: var(--cl-300);
+      
+      &:hover {
+        background-color: var(--bg-600);
+        border-color: var(--bg-600);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: -11px;
+        right: 27px;
+        border: 5px solid transparent;
+        border-bottom-color: inherit;
+      }
+      .wpd-cta-button:hover {
+        background-color: transparent;
+      }
     }
   }
 
