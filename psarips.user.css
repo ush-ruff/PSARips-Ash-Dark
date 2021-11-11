@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.7.0
+@version        1.7.1
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -564,6 +564,10 @@
     }
     .wpd-second-button, .wpd-prim-button {
       font-family: Lato, san-serif;
+    }
+    .wpd-second-button {
+      background-color: var(--bg-600);
+      color: var(--cl-300);
     }
     .wpd-tools-actions {
       top: 27px;
