@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.7.1
+@version        1.8.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -662,6 +662,68 @@
     }
     .cf-error-footer {
       border-top-color: var(--bg-600);
+    }
+  }
+
+  /* Login */
+  #login {
+    background-color: var(--bg-300);
+    border-radius: 15px;
+    
+    form {
+      background-color: transparent;
+    }
+    
+    label {
+      color: var(--cl-600);
+    }
+  }
+  
+  #loginform {
+    input[type="text"], input[type="password"] {
+      background-color: var(--bg-450) !important;
+      border-color: var(--bg-500);
+      color: var(--cl-600) !important;
+
+      &:focus-visible {
+        border-color: var(--link-hover);
+        color: var(--cl-400) !important;
+      }
+    }
+    #wp-submit {
+      background-color: var(--link);
+      border-color: var(--bg-400);
+      color: var(--cl-100);
+      
+      &:hover {
+        background-color: var(--link-hover);
+        border-color: var(--bg-600);
+      }
+      
+      &.disabled, &[disabled], &.button-primary-disabled, &.button-primary:disabled {
+        background-color: var(--bg-600) !important;
+        border-color: var(--bg-400) !important;
+        color: var(--cl-100) !important;
+      }
+    }
+  }
+  
+  .login {
+    #login_error, .message, .success {
+      background-color: var(--bg-500);
+      color: var(--cl-400);
+    }
+    
+    #nav {
+      color: var(--cl-500);
+    }
+    
+    #backtoblog a, #nav a {
+      color: var(--cl-500);
+      
+      &:hover, &:focus {
+        color: var(--link-hover)
+      }
     }
   }
 }
