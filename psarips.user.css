@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.9.0
+@version        1.10.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -100,33 +100,7 @@
   }
 
   /* @media rules */
-  @media only screen and (min-width:961px) {
-    .container-inner .main-inner {
-      display: flex;
-      width: 100%;
-      justify-content: space-evenly;
-      padding-right: 0;
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: 25%;
-        height: 100%;
-        top: 0;
-        right: 0;
-        background: var(--bg-290);
-      }
-      .content {
-        width: 75%;
-        flex: 1 1 auto;
-      }
-      .sidebar.s1 {
-        width: 25%;
-        flex: 1 1 auto;
-        margin-right: 0;
-      }
-    }
-  }
+  /* Navbar */
   @media only screen and (min-width: 720px) {
     #nav-header.nav-container, #main-header-search .search-expand {
       background-color: var(--bg-290);
@@ -139,9 +113,15 @@
       background: rgba(0, 0, 0, .5);
     }
   }
+  /* Sidebar */
   @media only screen and (min-width: 479px) and (max-width:960px) {
     .sidebar.s1 .sidebar-top {
-      border-bottom-color: var(--bg-100);
+      margin-inline: 1rem;
+      border-bottom-color: var(--bg-400);
+      
+      p {
+        color: var(--cl-400);
+      }
     }
     .s1.expanding, .s1.collapsing, .s1.expanded {
       background: var(--bg-290);
@@ -151,17 +131,17 @@
         background-color: transparent;
       }
       .sidebar {
-        box-shadow: 1px 1px 7px 3px rgba(0, 0, 0, 0.4)
+        box-shadow: 1px 1px 7px 3px rgba(0, 0, 0, 0.4);
       }
     }
   }
 
   /* Main */
-  .main-inner, .container-inner > .main::after, .container-inner > .main::before {
-    background-color: var(--bg-300);
-  }
   .main {
     background-color: var(--bg-300) !important;
+  }
+  .boxed #page {
+    background-color: var(--bg-400);
   }
   .page-title {
     background-color: var(--bg-300);
@@ -205,6 +185,9 @@
     .sidebar-content, .sidebar-toggle {
       background-color: var(--bg-290);
     }
+  }
+  .container-inner > .main::after {
+    background-color: var(--bg-290);
   }
   .widget-title {
     padding-block: 5px;
@@ -251,6 +234,14 @@
   }
   #footer-bottom {
     background-color: var(--bg-290);
+  }
+  #footer-bottom #back-to-top {
+    background-color: var(--bg-450);
+    
+    &:hover {
+      background-color: var(--bg-500);
+      color: var(--cl-100) !important;
+    }
   }
 
   /* Notice */
