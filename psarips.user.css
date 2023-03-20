@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.11.0
+@version        1.11.1
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -11,7 +11,7 @@
 @var            select bgImage "Background Image" ["None", "Spooky", "customBg:Custom Background"]
 @var            text customBgImage "Custom Background Image" "Enter url within quotes"
 ==/UserStyle== */
-@-moz-document url-prefix("https://psarips."), url-prefix("https://psa.one"), url-prefix("https://x265.club"), url-prefix("https://psa.pm") {
+@-moz-document url-prefix("https://psarips."), url-prefix("https://psa.one"), url-prefix("https://x265.club"), url-prefix("https://psa.pm"), url-prefix("https://psa.re") {
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
   :root {
     --bg-100: #000;
