@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.11.1
+@version        1.12.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -162,6 +162,9 @@
   }
   .post-list .post-inner {
     margin-right: unset;
+  }
+  .post-thumbnail img {
+    background-color: var(--bg-400);
   }
   .post-comments, .post-comments:hover {
     bottom: -44px !important;
@@ -680,6 +683,24 @@
     }
   }
 
+  /* Check Connection */
+  body.no-js {
+    background-image: none !important;
+    background-color: var(--bg-300) !important;
+    
+    .expandable {
+      border-color: var(--bg-500);
+    }
+    
+    .heading-icon, .caret-icon {
+      filter: invert(0.8);
+    }
+    
+    .footer-inner {
+      border-color: var(--bg-500)
+    }
+  }
+
   /* Login */
   #login {
     background-color: var(--bg-300);
@@ -719,6 +740,17 @@
         background-color: var(--bg-600) !important;
         border-color: var(--bg-400) !important;
         color: var(--cl-100) !important;
+      }
+    }
+    .wp-pwd .wp-hide-pw {
+      top: 50%;
+      background-color: transparent;
+      border: none;
+      color: var(--cl-600);
+      transform: translateY(-50%);
+      
+      &:hover, &:focus {
+        color: var(--cl-200);
       }
     }
   }
