@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.14.0
+@version        1.15.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -311,7 +311,8 @@
     color: var(--cl-600);
   }
   .post-tags a {
-    background-color: #273c75;
+    // background-color: #273c75;
+    background-color: #60719f;
     color: var(--cl-300);
     
     &:is(:hover, :focus) {
