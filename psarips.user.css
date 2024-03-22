@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.16.0
+@version        1.17.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -13,6 +13,7 @@
 ==/UserStyle== */
 @-moz-document url-prefix("https://psarips."), url-prefix("https://psa.one"), url-prefix("https://x265.club"), url-prefix("https://psa.pm"), url-prefix("https://psa.re"), url-prefix("https://psa.wf") {
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
   :root {
     --bg-100: #000;
     --bg-200: #111;
@@ -64,10 +65,10 @@
     background-color: var(--bg-220);
     color: var(--cl-600);
   }
-  body.wp-admin {
-    height: auto;
-    background-color: #2c3338;
-  }
+  // body.wp-admin {
+  //   height: auto;
+  //   background-color: #2c3338;
+  // }
   if bgImage == Spooky {
     body:not(.wp-admin) {
       background: url("/wp-content/uploads/2020/10/—Pngtree—halloween-pumpkin-border_5494976.png") repeat center top;
@@ -732,11 +733,9 @@
     .expandable {
       border-color: var(--bg-500);
     }
-    
     .heading-icon, .caret-icon {
       filter: invert(0.8);
     }
-    
     .footer-inner {
       border-color: var(--bg-500)
     }
@@ -750,7 +749,6 @@
     form {
       background-color: transparent;
     }
-    
     label {
       color: var(--cl-600);
     }
@@ -776,7 +774,6 @@
         background-color: var(--link-hover);
         border-color: var(--bg-600);
       }
-      
       &.disabled, &[disabled], &.button-primary-disabled, &.button-primary:disabled {
         background-color: var(--bg-600) !important;
         border-color: var(--bg-400) !important;
@@ -795,23 +792,323 @@
       }
     }
   }
-  
   .login {
     #login_error, .message, .success {
       background-color: var(--bg-500);
       color: var(--cl-400);
     }
-    
     #nav {
       color: var(--cl-500);
     }
-    
     #backtoblog a, #nav a {
       color: var(--cl-500);
       
       &:hover, &:focus {
         color: var(--link-hover)
       }
+    }
+  }
+
+
+  /* ----- Admin Panel ----- */
+  .wp-admin {
+    --page-bg: var(--bg-300);
+    --input-bg: var(--bg-550);
+    --input-border: var(--bg-600);
+    --input-border-focus: var(--bg-300);
+    --checkbox-selected-bg: var(--tc-4, var(--link));
+  }
+  .admin-color-fresh {
+    --tc-1: #1d2327;
+    --tc-2: #2c3338;
+    --tc-3: #2271b1;
+    --tc-4: #72aee6;
+  }
+  .admin-color-light {
+    --tc-2: #e5e5e5;
+    --tc-3: #d64e07;
+    --tc-4: #04a4cc;
+  }
+  .admin-color-modern {
+    --tc-1: #1e1e1e;
+    --tc-2: #2e2e2e;
+    --tc-3: #3858e9;
+    --tc-4: #27d566;
+  }
+  .admin-color-blue {
+    --tc-1: #096484;
+    --tc-2: #4796b3;
+    --tc-3: #52accc;
+    --tc-4: #74b6ce;
+  }
+  .admin-color-coffee {
+    --tc-1: #46403c;
+    --tc-2: #6f635a;
+    --tc-3: #c7a589;
+    --tc-4: #9ea476;
+  }
+  .admin-color-ectoplasm {
+    --tc-1: #413256;
+    --tc-2: #523f6d;
+    --tc-3: #a3b745;
+    --tc-4: #d46f15;
+  }
+  .admin-color-midnight {
+    --tc-1: #25282b;
+    --tc-2: #363b3f;
+    --tc-3: #69a8bb;
+    --tc-4: #e14d43;
+  }
+  .admin-color-ocean {
+    --tc-1: #3b565e;
+    --tc-2: #738e96;
+    --tc-3: #9ebaa0;
+    --tc-4: #aa9d88;
+  }
+  .admin-color-sunrise {
+    --tc-1: #933532;
+    --tc-2: #c45652;
+    --tc-3: #dd823b;
+    --tc-4: #ccaf0b;
+  }
+  
+  html.wp-toolbar,
+  body.wp-admin {
+    height: auto;
+    background-color: var(--page-bg);
+    color: var(--cl-500);
+  }
+  #wpadminbar {
+    background-color: var(--tc-3);
+  }
+  
+  .form-table th, .form-wrap label {
+    color: inherit;
+  }
+  .form-wrap p, p.description {
+    color: var(--cl-600);
+  }
+  #wpfooter {
+    color: var(--cl-900);
+  }
+  
+  .color-option.selected, .color-option:hover {
+    background-color: var(--bg-400);
+  }
+  .color-palette {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  .notice, div.error, div.updated {
+    background-color: var(--tc-4);
+    border-color: var(--tc-4);
+    color: var(--cl-100);
+  }
+  .notice-success, div.updated {
+    border-left-color: #00a32a;
+  }
+  
+  /* Sidebar */
+  #adminmenu, #adminmenuback, #adminmenuwrap {
+    background-color: var(--tc-2);
+  }
+  ul#adminmenu a.wp-has-current-submenu::after, ul#adminmenu > li.current > a.current::after {
+    border-right-color: var(--page-bg);
+  }
+  
+  /* Dashboard */
+  #dashboard-widgets h3, #dashboard-widgets h4, #dashboard_quick_press .drafts h2 {
+    color: var(--cl-200);
+  }
+  #dashboard-widgets .postbox-container .empty-container {
+    outline-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .postbox {
+    background-color: var(--bg-450);
+    border-color: var(--bg-450);
+    color: var(--cl-300);
+
+    .postbox-header, .activity-block, .community-events-footer {
+      border-color: var(--bg-550);
+    }
+    
+    #activity-widget {
+      font-family: Titillium, Lato, sans-serif;
+
+      ul span {
+        color: var(--cl-200);
+      }
+      #future-posts li:nth-child(2n+1), #published-posts li:nth-child(2n+1) {
+        background-color: var(--bg-500);
+      }
+      #latest-comments {
+        background-color: var(--bg-450);
+      }
+      #the-comment-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+
+        .comment-item {
+          background-color: var(--bg-500);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, .3), inset 0 0 20px rgba(0, 0, 0, .1);
+        }
+        .comment-meta {
+          color: var(--cl-200);
+        }
+      } 
+    }
+    
+    .community-events ul.activity-block.last {
+      background-color: var(--bg-300);
+      border-color: var(--bg-300);
+      color: var(--cl-200);
+    }
+    .community-events li:first-child {
+      border-top-color: var(--bg-300);
+      color: inherit;
+    }
+    .community-events-footer {
+      color: var(--bg-550);
+    }
+  }  
+  
+  /* Screen Meta */
+  #screen-meta {
+    --checkbox-selected-bg: var(--tc-3);
+    background-color: var(--tc-4, var(--bg-550));
+    border-color: var(--tc-3, var(--bg-550));
+    color: var(--cl-300);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+
+    #contextual-help-back, 
+    .contextual-help-tabs .active {
+      background-color: var(--bg-450);
+      border-color: var(--bg-300);
+    }
+    .contextual-help-tabs a, 
+    .contextual-help-sidebar a {
+      color: var(--cl-200);
+      
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .contextual-help-tabs .active a {
+      border-color: var(--bg-300);
+      color: var(--cl-100);
+    }
+  }
+  #screen-meta-links .show-settings {
+    background-color: var(--tc-4, var(--bg-450));
+    border-color: var(--tc-3, var(--bg-300));
+    color: var(--cl-200);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+    
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  
+  /* Input */  
+  .wp-admin {
+    input[type="color"], input[type="date"], input[type="datetime-local"], input[type="datetime"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select, textarea {
+      background-color: var(--input-bg);
+      border-color: var(--input-border);
+      color: var(--cl-400);
+      
+      &:focus {
+        border-color: var(--input-border-focus);
+        color: var(--cl-300);
+        box-shadow: 0 0 0 2px var(--tc-4, var(--link));
+      }
+    }
+    input[type="checkbox"], input[type="radio"] {
+      background-color: var(--input-bg);
+      border-color: var(--input-border);
+    }
+    input[type="checkbox"] {
+      border-radius: 0.25rem;
+      
+      &:hover {
+        border-color: var(--input-border-focus);
+      }
+    }
+    input[type="checkbox"]:checked, input[type="radio"]:checked::before, 
+    .color-option:hover input[type="radio"]::before {
+      background-color: var(--checkbox-selected-bg);
+    }
+    .color-option:hover input[type="radio"]::before {
+      content: "";
+      display: block;
+      width: 0.5rem;
+      height: 0.5rem;
+      line-height: 1.14285714;
+      margin: 0.1875rem;
+      border-radius: 50%;
+    }
+    input[type="checkbox"]:checked::before {
+      filter: brightness(10);
+    }
+    input.disabled, input:disabled, select.disabled, select:disabled, textarea.disabled, textarea:disabled {
+      background-color: var(--input-bg);
+      color: var(--cl-400);
+      opacity: 0.65;
+    }
+    #user_login + .description {
+      color: var(--red);
+    }
+  }
+  .wp-core-ui {
+    .button:not(.button-primary), .button-secondary {
+      background-color: var(--tc-3, var(--link));
+      border-color: var(--tc-1, var(--bg-400));
+      color: var(--cl-100);
+      
+      &:hover, &:active, &:focus {
+        background-color: var(--tc-4, var(--link-hover));
+        border-color: var(--tc-1, var(--bg-200));
+        color: var(--cl-100);
+      }
+      &:focus {
+        box-shadow: 0 0 0 1px var(--tc-2, var(--bg-200)), 0 0 0 2px var(--tc-4, var(--link));
+      }
+    }
+    button-disabled, .button-secondary.disabled, .button-secondary:disabled, .button-secondary[disabled], .button.disabled, .button:disabled, .button[disabled] {
+      background-color: var(--tc-3, var(--link)) !important;
+      border-color: var(--tc-1, var(--bg-400)) !important;
+      color: var(--cl-100) !important;
+      opacity: 0.65;
+    }
+    
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' style='rotate:-90deg; scale:0.8;' fill='%23aaa' %3E%3Cpolygon points='207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128 '/%3E%3C/svg%3E");
+      
+      &:active {
+        border-color: var(--tc-1, var(--bg-300));
+      }
+      &:focus-visible {
+        color: var(--cl-200);
+        text-shadow: none;
+      }
+      &:hover {
+        color: var(--cl-200);
+        filter: brightness(1.1);
+      }
+    }
+  }
+  
+  /* Theme Fixes */
+  .admin-color-fresh,
+  .admin-color-modern,
+  .admin-color-midnight, {
+    --page-bg: var(--tc-1);
+    --input-bg: var(--tc-2);
+    --input-border: var(--tc-1);
+    --input-border-focus: var(--tc-4);
+    
+    .color-option.selected, .color-option:hover {
+      background-color: var(--tc-2);
     }
   }
 }
