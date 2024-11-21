@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.2
+@version        1.17.3
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -57,6 +57,12 @@
     --post-body-red: #f9667b;
     --post-body-violet: #89a6ff;
     --post-body-orange: #f78750;
+    
+    --spooky-image: url("/wp-content/uploads/2020/10/—Pngtree—halloween-pumpkin-border_5494976.png");
+    --download-icon: url("https://i.imgur.com/P5uJpAJ.png");
+    --expand-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 617.12 617.16' %3E%3Cg transform='translate(-71.438 -68.062)' %3E%3Cpath id='rect1337' style='fill-rule:evenodd;stroke-width:0;fill:%23ddd' d='m275.72 68.062v204.32h-204.28l-0.002 208.56h204.28v204.28h208.56v-204.28h204.28v-208.56h-204.28v-204.32l-208.56 0.002z' /%3E%3C/g %3E%3C/svg%0A%3E");
+    --torrent-icon: url("https://i.imgur.com/WnEvNE6.png");
+    --zip-icon: url(https://icon-library.com/images/rar-icon/rar-icon-22.jpg);
   }
   * {
     scrollbar-color: #404449 var(--bg-300);
@@ -71,7 +77,7 @@
   // }
   if bgImage == Spooky {
     body:not(.wp-admin) {
-      background: url("/wp-content/uploads/2020/10/—Pngtree—halloween-pumpkin-border_5494976.png") repeat center top;
+      background: var(--spooky-image) repeat center top;
       background-attachment: scroll;
       background-size: 100%;
     }
@@ -343,7 +349,7 @@
   }
   .filetype-7z, .filetype-gz, .filetype-rar, .filetype-sit, .filetype-tar, .filetype-zip {
     padding-left: 24px;
-    background-image: url(https://icon-library.com/images/rar-icon/rar-icon-22.jpg);
+    background-image: var(--zip-icon);
     background-size: 20px;
   }
   .comment code:not([lang]), .entry code:not([lang]) {
@@ -372,7 +378,7 @@
         aspect-ratio: 1;
         top: 50%;
         left: 4px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 617.12 617.16' %3E%3Cg transform='translate(-71.438 -68.062)' %3E%3Cpath id='rect1337' style='fill-rule:evenodd;stroke-width:0;fill:%23ddd' d='m275.72 68.062v204.32h-204.28l-0.002 208.56h204.28v204.28h208.56v-204.28h204.28v-208.56h-204.28v-204.32l-208.56 0.002z' /%3E%3C/g %3E%3C/svg%0A%3E");
+        background-image: var(--expand-icon);
         background-repeat: no-repeat;
         background-size: 14px;
         transform: translate(0, -50%);
@@ -399,6 +405,13 @@
       background-color: var(--post-body);
       border-color: var(--post-body);
       color: var(--cl-400);
+      
+      noindex a {
+        text-transform: uppercase;
+      }
+    }
+    .sp-body:not(:has(p:first-child:empty)) {
+      padding-block-start: 1rem;
     }
     .spdiv {
       color: var(--cl-400);
@@ -411,6 +424,38 @@
     }
     .sp-body .sp-body {
       background-color: var(--post-body-light);
+    }
+    .sp-body p strong:has(> .fa-download),
+    .sp-body p:has(> .fa-file-arrow-down) {
+      --_size: 24px
+      display: grid;
+      grid-template-columns: var(--_size) 1fr;
+      align-items: center;
+      gap: 0.5rem;
+
+      a {
+        color: var(--cl-300) !important;
+
+        &:hover {
+          color: var(--link-hover) !important;
+        }
+      }
+    }
+    .fa-download, .fa-file-arrow-down {
+      width: var(--_size);
+      aspect-ratio: 1;
+      background-repeat: no-repeat;
+      background-size: var(--_size);
+
+      &::before {
+        content: "";
+      }
+    }
+    .fa-download {
+      background-image: var(--download-icon);
+    }
+    .fa-file-arrow-down {
+      background-image: var(--torrent-icon);
     }
   }
   img[alt="Torrent"] {
