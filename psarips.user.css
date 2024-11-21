@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.1
+@version        1.17.2
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -401,7 +401,13 @@
       color: var(--cl-400);
     }
     .spdiv {
-      color: var(--cl-600);
+      color: var(--cl-400);
+      opacity: 0.8;
+      transition: opacity 75ms ease-out;
+      
+      &:hover {
+        opacity: 1;
+      }
     }
     .sp-body .sp-body {
       background-color: var(--post-body-light);
