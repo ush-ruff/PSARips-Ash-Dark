@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.0
+@version        1.17.1
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -362,9 +362,21 @@
     border-radius: 2px;
 
     .sp-head {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 617.12 617.16' %3E%3Cg transform='translate(-71.438 -68.062)' %3E%3Cpath id='rect1337' style='fill-rule:evenodd;stroke-width:0;fill:%23ddd' d='m275.72 68.062v204.32h-204.28l-0.002 208.56h204.28v204.28h208.56v-204.28h204.28v-208.56h-204.28v-204.32l-208.56 0.002z' /%3E%3C/g %3E%3C/svg%0A%3E");
-      background-size: 14px;
       color: var(--cl-300);
+      
+      &::before {
+        all: unset;
+        content: "";
+        position: absolute;
+        width: 14px;
+        aspect-ratio: 1;
+        top: 50%;
+        left: 4px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 617.12 617.16' %3E%3Cg transform='translate(-71.438 -68.062)' %3E%3Cpath id='rect1337' style='fill-rule:evenodd;stroke-width:0;fill:%23ddd' d='m275.72 68.062v204.32h-204.28l-0.002 208.56h204.28v204.28h208.56v-204.28h204.28v-208.56h-204.28v-204.32l-208.56 0.002z' /%3E%3C/g %3E%3C/svg%0A%3E");
+        background-repeat: no-repeat;
+        background-size: 14px;
+        transform: translate(0, -50%);
+      }
     }
     .sp-head.unfolded {
       background-image: none;
@@ -373,10 +385,10 @@
       &::before {
         content: "";
         position: absolute;
-        height: 5px;
         width: 14px;
+        height: 5px;
         top: 50%;
-        left: 0;
+        left: 4px;
         background: var(--cl-300);
         border-radius: 1px;
         transform: translate(0, -50%);
