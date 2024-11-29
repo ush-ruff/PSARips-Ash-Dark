@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.3
+@version        1.17.4
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -413,6 +413,15 @@
     .sp-body:not(:has(p:first-child:empty)) {
       padding-block-start: 1rem;
     }
+    .sp-body p:has(strong:nth-of-type(2)) {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      
+      br {
+        display: none;
+      }
+    }
     .spdiv {
       color: var(--cl-400);
       opacity: 0.8;
@@ -426,6 +435,8 @@
       background-color: var(--post-body-light);
     }
     .sp-body p strong:has(> .fa-download),
+    .sp-body p strong:has(> .fa-file-arrow-down),
+    .sp-body p:has(> .fa-download) 
     .sp-body p:has(> .fa-file-arrow-down) {
       --_size: 24px
       display: grid;
