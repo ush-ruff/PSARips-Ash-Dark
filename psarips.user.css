@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.4
+@version        1.17.5
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -225,6 +225,9 @@
   }
   .widget-title {
     padding-block: 5px;
+  }
+  .custom-html-widget > p[style*="background-color"] {
+    background-color: var(--bg-200) !important;
   }
   .alx-posts {
     li {
