@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.6
+@version        1.17.7
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -988,8 +988,8 @@
         background-color: var(--link-hover);
         border-color: var(--bg-600);
       }
-      &.d
-        isabled, &[disabled], &.button-primary-disabled, &.button-primary:disabled {
+
+      &.disabled, &[disabled], &.button-primary-disabled, &.button-primary:disabled {
         background-color: var(--bg-600) !important;
         border-color: var(--bg-400) !important;
         color: var(--cl-100) !important;
