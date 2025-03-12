@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.5
+@version        1.17.6
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -113,6 +113,11 @@
     &:hover {
       -webkit-text-stroke: initial;
     }
+  }
+
+  input::placeholder {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    color: currentColor;
   }
 
   /* @media rules */
@@ -225,6 +230,7 @@
   }
 
   .entry.excerpt p {
+    font-size: 1.025rem;
     color: var(--cl-600);
   }
 
@@ -588,6 +594,12 @@
   }
 
   /* Related Posts */
+  .heading i.fa-hand-point-right::before {
+    content: "\f004";
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+  
   .related-posts {
     display: flex;
     gap: 0.5rem;
