@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.7
+@version        1.17.8
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -372,6 +372,10 @@
 
   #wpd-post-rating .wpd-rating-wrap .wpd-rating-stars .wpd-star:not(.wpd-active) {
     fill: var(--cl-600);
+  }
+
+  .entry-inner img.size-full {
+    width: 100%;
   }
 
   .post-nav li a span {
