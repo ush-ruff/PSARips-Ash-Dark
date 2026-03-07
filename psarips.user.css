@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.8
+@version        1.17.9
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -796,7 +796,7 @@
     }
 
     .ql-container {
-      height: 5.5rem;
+      min-height: 5.5rem;
       background-color: var(--bg-400);
       border-color: var(--bg-600);
       border-bottom-color: var(--bg-600) !important;
