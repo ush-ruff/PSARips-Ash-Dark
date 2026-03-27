@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.17.9
+@version        1.18.0
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -118,6 +118,14 @@
   input::placeholder {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
     color: currentColor;
+  }
+
+  p {
+    color: var(--cl-600);
+  }
+  
+  .social-link {
+    color: var(--cl-500);
   }
 
   /* @media rules */
@@ -239,13 +247,13 @@
   }
 
   .wp-pagenavi a {
-    color: var(--cl-600);
     border-color: var(--bg-600);
+    color: var(--cl-600);
   }
 
   .wp-pagenavi :is(a:active, a:hover), .wp-pagenavi span.current {
-    color: var(--cl-400);
     border-top: 1px solid var(--cl-900);
+    color: var(--cl-400);
   }
 
   /* Sidebar */
@@ -463,10 +471,10 @@
       &::before {
         content: "";
         position: absolute;
-        width: 14px;
-        height: 5px;
         top: 50%;
         left: 4px;
+        width: 14px;
+        height: 5px;
         background: var(--cl-300);
         border-radius: 1px;
         transform: translate(0, -50%);
@@ -568,18 +576,23 @@
     &[style="color: #008000;"] {
       color: var(--post-body-green) !important;
     }
+
     &[style="color: #00ff00;"] {
       color: var(--post-body-green-bright) !important;
     }
+
     &[style="color: #993366;"] {
       color: var(--post-body-pink) !important;
     }
+
     &[style="color: #ff0000;"] {
       color: var(--post-body-red) !important;
     }
+
     &[style="color: #3366ff;"] {
       color: var(--post-body-violet) !important;
     }
+
     &[style="color: #ff6600;"] {
       color: var(--post-body-orange) !important;
     }
@@ -587,6 +600,7 @@
 
   .sp-body .dropshadowboxes-rounded-corners {
     border: 1px solid #33333d !important;
+
     a {
       color: var(--cl-500) !important;
 
