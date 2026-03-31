@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.18.0
+@version        1.18.1
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -186,6 +186,10 @@
   .page-title, .post-title, .post-title a, .page-title a {
     color: var(--cl-300) !important;
     -webkit-text-stroke: initial;
+  }
+
+  .post-title {
+    font-size: 23.6px;
   }
 
   .post-list {
