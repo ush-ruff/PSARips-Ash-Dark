@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.18.1
+@version        1.18.2
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -493,6 +493,10 @@
       
       noindex a {
         text-transform: uppercase;
+      }
+
+      p {
+        color: inherit;
       }
     }
 
