@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.18.2
+@version        1.18.3
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -933,6 +933,68 @@
   .notebox::before,
   .notebox::after {
     border-bottom-color: var(--bg-200);
+  }
+
+  /* Search */
+  #ajaxsearchlite1 .probox, div.asl_w .probox {
+    background-color: var(--bg-450);
+    border-color: var(--bg-500);
+    border-radius: 4px;
+
+    &:focus-within {
+      border-color: var(--link-hover);
+      color: var(--cl-400);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+    
+    .proinput input {
+      text-shadow: unset;
+      background-color: transparent !important;
+      color: var(--cl-300) !important;
+      
+      &::placeholder {
+        text-shadow: unset;
+        color: var(--cl-600) !important;
+      }
+    }
+    
+    .promagnifier {
+      border: unset;
+      box-shadow: unset;
+      
+      .innericon svg {
+        fill: var(--cl-100);
+      }
+    }
+  }
+  
+  div[id^="ajaxsearchlite"].asl_r.asl_r.wpdreams_asl_results  {
+    background-color: var(--bg-450);
+    
+    .results {
+      scrollbar-color: var(--bg-600) var(--bg-300);
+      
+      .asl_nores, .item {
+        background-color: inherit;
+        color: var(--cl-300);
+      }
+    }
+    
+    .results .item {
+      border: unset;
+
+      &::after {
+        background-color: var(--bg-600);
+      }
+      
+      .asl_content h3 a {
+        font-weight: 600;
+        color: var(--cl-300);
+      }
+    }
   }
   
   /* Captcha Wait Page */
