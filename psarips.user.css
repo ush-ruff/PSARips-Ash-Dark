@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.18.4
+@version        1.18.5
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -940,38 +940,49 @@
   }
 
   /* Search */
-  #ajaxsearchlite1 .probox, div.asl_w .probox {
-    background-color: var(--bg-450);
-    border-color: var(--bg-500);
-    border-radius: 4px;
-
+  div[id^="ajaxsearchlite"].asl_m .probox {
+    background-color: var(--bg-450) !important;
+    border: 1px solid var(--bg-500);
+    box-shadow: unset;
+    
     &:focus-within {
       border-color: var(--link-hover);
       color: var(--cl-400);
     }
-
-    &:focus-visible {
-      outline: none;
-    }
     
-    .proinput input {
-      text-shadow: unset;
-      background-color: transparent !important;
+    .proinput input.orig {
+      margin: unset !important;
+      padding: unset !important;
+      text-shadow: unset !important;
+      background: unset !important;
+      border: unset !important;
       color: var(--cl-300) !important;
+      box-shadow: unset !important;
+      z-index: unset !important;
       
       &::placeholder {
-        text-shadow: unset;
-        color: var(--cl-600) !important;
+        -webkit-text-fill-color: unset !important;
+        text-shadow: unset !important;
+        color: var(--cl-300) !important;
       }
     }
     
     .promagnifier {
+      background: transparent;
       border: unset;
       box-shadow: unset;
       
       .innericon svg {
-        fill: var(--cl-100);
+        fill: var(--cl-900);
       }
+    }
+    
+    .proloading {
+      scale: 0.5;
+    }
+    
+    .proclose {
+      scale: 0.8
     }
   }
   
@@ -992,6 +1003,15 @@
 
       &::after {
         background-color: var(--bg-600);
+      }
+      
+      &.hovered {
+        background: var(--bg-300);
+      }
+      
+      .asl_content {
+        text-shadow: unset;
+        color: var(--cl-600);
       }
       
       .asl_content h3 a {
