@@ -3,7 +3,7 @@
 @namespace      github.com/ush-ruff
 @homepageURL    https://github.com/ush-ruff/PSARips-Ash-Dark
 @updateURL      https://github.com/ush-ruff/PSARips-Ash-Dark/raw/main/psarips.user.css
-@version        1.18.6
+@version        1.18.7
 @description    Dark mode for PSARips with some tiny layout changes.
 @author         ushruff
 @preprocessor   stylus
@@ -940,15 +940,19 @@
   }
 
   /* Search */
-  div[id^="ajaxsearchlite"].asl_m .probox {
+  #wrapper div[id^="ajaxsearchlite"].asl_m .probox {
     background-color: var(--bg-450) !important;
     border: 1px solid var(--bg-500);
-    border-radius: 2px;
+    border-radius: 2px !important;
     box-shadow: unset;
     
     &:focus-within {
       border-color: var(--link-hover);
-      color: var(--cl-400);
+      color: var(--cl-400) !important;
+    }
+    
+    .proinput {
+      color: var(--cl-300) !important;
     }
     
     .proinput input.orig {
